@@ -13,7 +13,7 @@ jobs:
     steps:
     - uses: actions/checkout@v3
     - name: Build the Docker image
-      run: docker build . --tag my-image-name:$GITHUB_RUN_NUMBER
+    - run: docker build . --tag my-image-name:$GITHUB_RUN_NUMBER
     - name: login the Docker image
     - run: docker login -u tipaproger -p ${{ secrets.DOCKER_PASSWORD }} 
      
