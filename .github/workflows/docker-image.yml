@@ -13,7 +13,9 @@ jobs:
     steps:
     - uses: actions/checkout@v3
     - name: Build the Docker image
-    - run: docker build . --tag my-image-name
-    - run: docker push my-image-name
+      run: docker build . --tag my-image-name
+    - uses: actions/checkout@v3
+    - name: push the Docker image
+      run: docker push my-image-name
   
   
