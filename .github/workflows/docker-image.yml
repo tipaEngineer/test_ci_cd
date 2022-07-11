@@ -15,6 +15,11 @@ jobs:
     - name: Build the Docker image
       run: docker build . --tag my-image-name:$GITHUB_RUN_NUMBER
     - name: login the Docker image
-      run: docker login -u tipaproger -p ${{ secrets.DOCKER_PASSWORD }}
+    - uses: docker/login-action@v2
+      with:
+          username: tipaproger
+          password: ${{ secrets.DOCKER_PASSWORD }}
+    
+     
   
   
