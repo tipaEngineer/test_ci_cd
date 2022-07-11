@@ -13,10 +13,12 @@ jobs:
     steps:
     - uses: actions/checkout@v3
     - name: Build the Docker image
-      run: docker build . --tag my-image-name:${{ github.run_number }}
+      run: docker build . --tag lesson3:${{ github.run_number }}
     - name: Log in to Docker Hub
       uses: docker/login-action@f054a8b539a109f9f41c372932f1ae047eff08c9
       with:
           username: tipaproger
           password: ${{ secrets.DOCKER_PASSWORD }}
+    - name: Push the Docker image
+      run: docker push lesson3:${{ github.run_number }}
   
