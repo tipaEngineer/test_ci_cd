@@ -9,9 +9,7 @@ on:
 jobs:
 
   build:
-
-    runs-on: tipaproger/ci-cd
-
+    runs-on: tipaproger/ci-cdd
     steps:
     - uses: actions/checkout@v3
     - name: Build the Docker image
